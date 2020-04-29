@@ -22,15 +22,11 @@
     <img alt="Repository issues" src="https://img.shields.io/github/issues/tucoander/backend-gobarber-gostack?style=flat-square">
   </a>
 
-  <img alt="GitHub" src="https://img.shields.io/github/license/tucoander/backend-gobarber-gostack?style=flat-square">
-
-
 </div>
 
 ---
 
 <p align="center">
-  Esse projeto visa aproximar os profissionais e seus respectivos clientes para o serviço de cabelereiro/barbearia. Os profissionais podem cadastrar seus serviços e disponibilidades, e os clientes por sua vez podem procurar esses serviços e agendar um horário com o profissional desejado.
   This project aims to close professional and theirs customers to the hairstyle and barber service. The professionals are able to register his services and schedule availability, and the customers can search for those services and schedules an appointment with the chosen professional.
 </p>
 
@@ -104,4 +100,3 @@ git push origin my-feature
 
 - [@tucoander](https://github.com/tucoander) - Initial work
 - [@rocketseat](https://github.com/rocketseat) - Idea
-
