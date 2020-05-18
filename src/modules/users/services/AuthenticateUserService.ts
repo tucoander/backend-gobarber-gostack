@@ -19,7 +19,7 @@ interface IResponse {
 @injectable()
 class AuthenticateUserService {
   constructor(
-    @inject('UsersRepository')
+    @inject('UserRepositories')
     private usersRepository: IUsersRepository
     ) {}
   public async execute({ email, password }: IRequest): Promise<IResponse> {

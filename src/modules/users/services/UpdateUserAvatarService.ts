@@ -14,7 +14,7 @@ interface IRequest {
 @injectable()
 class UpdateUserAvatarService {
   constructor(
-    @inject('usersRepository')
+    @inject('UserRepositories')
     private usersRepository: IUsersRepository) {}
   public async execute({ user_id, avatarFilename }: IRequest): Promise<User> {
    

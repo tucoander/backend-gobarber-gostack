@@ -12,7 +12,7 @@ interface IRequest {
 @injectable()
 class CreateUserService {
   constructor(
-    @inject('UsersRepository')
+    @inject('UserRepositories')
     private usersRepository: IUsersRepository) {}
   public async execute({ name, email, password }: IRequest): Promise<User> {
     
