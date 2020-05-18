@@ -1,8 +1,8 @@
-
 import { compare } from 'bcryptjs';
 import { sign } from 'jsonwebtoken';
 import User from '@modules/users/infra/typeorm/entities/User';
 import authConfig from '@config/auth';
+import { injectable, inject } from 'tsyringe';
 import AppError from '@shared/error/AppError';
 
 import IUsersRepository from '../repositories/IUserRepository';
@@ -16,9 +16,12 @@ interface IResponse {
   user: User;
   token: string;
 }
-
+@injectable()
 class AuthenticateUserService {
-  constructor(private usersRepository: IUsersRepository) {}
+  constructor(
+    @inject('UsersRepository')
+    private usersRepository: IUsersRepository
+    ) {}
   public async execute({ email, password }: IRequest): Promise<IResponse> {
    
     const user = await this.usersRepository.findByEmail(email);
