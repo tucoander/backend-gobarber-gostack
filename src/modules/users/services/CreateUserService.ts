@@ -15,9 +15,9 @@ class CreateUserService {
     @inject('UserRepositories')
     private usersRepository: IUsersRepository,
     @inject('HashProvider')
-    private hashProvider: IHashProvider) {}
+    private hashProvider: IHashProvider,
+  ) {}
   public async execute({ name, email, password }: IRequest): Promise<User> {
-    
     const checkUserExists = await this.usersRepository.findByEmail(email);
 
     if (checkUserExists) {
@@ -31,7 +31,6 @@ class CreateUserService {
       email,
       password: hashedPassword,
     });
-
 
     return user;
   }

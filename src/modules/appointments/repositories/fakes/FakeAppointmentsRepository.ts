@@ -8,12 +8,16 @@ class AppointmentsRepository implements IAppointmentRepository {
   private appointments: Appointment[] = [];
 
   public async findByDate(date: Date): Promise<Appointment | undefined> {
-    const findAppointment = this.appointments.find(
-      appointment => isEqual(appointment.date, date) );
-      return findAppointment;
+    const findAppointment = this.appointments.find(appointment =>
+      isEqual(appointment.date, date),
+    );
+    return findAppointment;
   }
 
-  public async create({ provider_id, date }: ICreateAppointmentDTO): Promise<Appointment> {
+  public async create({
+    provider_id,
+    date,
+  }: ICreateAppointmentDTO): Promise<Appointment> {
     const appointment = new Appointment();
 
     Object.assign(appointment, { id: uuid(), date, provider_id });
